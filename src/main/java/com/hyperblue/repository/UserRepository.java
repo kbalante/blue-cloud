@@ -16,5 +16,11 @@ public interface UserRepository extends JpaRepository<User, Long> {
      */
     User findOneByEmail(String email);
 
+    /**
+     * Find a user using an email and password.
+     * @param email email
+     * @param passwordEncryped password
+     * @return user associated to email and password or null
+     */
     User findOneByEmailAndPasswordEncrypted(String email, String passwordEncryped);
 }
