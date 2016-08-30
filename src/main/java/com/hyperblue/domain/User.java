@@ -2,6 +2,9 @@ package com.hyperblue.domain;
 
 import javax.persistence.*;
 
+/**
+ * User entity
+ */
 @Entity
 public class User {
 
@@ -10,7 +13,7 @@ public class User {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "name", nullable = true)
+    @Column(name = "name")
     private String name;
 
     @Column(name = "email", nullable = false)
@@ -21,6 +24,9 @@ public class User {
 
     @Column(name = "password_encrypted", nullable = false)
     private String passwordEncrypted;
+
+    public User() {
+    }
 
     public Long getId() {
         return id;

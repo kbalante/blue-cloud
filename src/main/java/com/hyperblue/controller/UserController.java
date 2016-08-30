@@ -1,6 +1,8 @@
 package com.hyperblue.controller;
 
+import com.hyperblue.domain.Project;
 import com.hyperblue.domain.User;
+import com.hyperblue.repository.ProjectRepository;
 import com.hyperblue.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.Collection;
 
 /**
  * User Controller: authenticate and register users
@@ -19,6 +23,12 @@ public class UserController {
      */
     @Autowired
     private UserRepository userRepository;
+
+    /**
+     * Project Repository
+     */
+    @Autowired
+    private ProjectRepository projectRepository;
 
     /**
      * Registration Form
@@ -82,6 +92,16 @@ public class UserController {
             model.addAttribute("error", "Your email and/or password is incorrect.");
             return "user/login";
         }
+
+        Collection<Project> projects = projectRepository.findAll();
+
+        /*for(Project project:projects) {
+            Collection<Task> tasks = project.getTasks();
+            for(Task task:tasks) {
+                System.out.println(project.getName() + " : " + task.getSummary());
+            }
+        }*/
+        model.addAttribute("projects", projects);
 
         return "home";
     }

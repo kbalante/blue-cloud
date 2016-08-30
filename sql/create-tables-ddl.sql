@@ -18,7 +18,7 @@ CREATE TABLE bluecloud.reminder (
   type VARCHAR(50) NOT NULL,
   description TEXT NOT NULL,
   priority VARCHAR(100),
-  status VARCHAR(100) NOT NULL,
+  status VARCHAR(100),
   label VARCHAR(100),
   sequence SMALLINT,
   created_at DATE,
@@ -31,19 +31,22 @@ CREATE TABLE bluecloud.project (
   id BIGINT NOT NULL AUTO_INCREMENT,
   name VARCHAR(100) NOT NULL,
   project_key VARCHAR(5) NOT NULL,
-  private boolean NOT NULL,
+  is_private boolean NOT NULL,
   owner_user_id BIGINT NOT NULL,
   lead_user_id BIGINT,
   created_at DATE,
   updated_at DATE,
   PRIMARY KEY (id)
 );
-
+drop table bluecloud.task;
 CREATE TABLE bluecloud.task (
   id BIGINT NOT NULL AUTO_INCREMENT,
   project_id BIGINT NOT NULL,
   summary VARCHAR(1000) NOT NULL,
   description TEXT,
+  owner_user_id BIGINT,
+  priority VARCHAR(100),
+  status VARCHAR(100),
   created_at DATE,
   updated_at DATE,
   PRIMARY KEY (id)
