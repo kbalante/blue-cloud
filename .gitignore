@@ -8,4 +8,5 @@ target/
 .idea/modules.xml
 .idea/uiDesigner.xml
 .idea/workspace.xml
+.idea/vcs.xml
 .mvn/
