@@ -26,7 +26,7 @@
             <div class="form-group">
                 <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                 <div class="col-lg-10">
-                    <input class="form-control" type="email" ng-model="user.email" name="email" required="" />
+                    <input class="form-control" type="email" ng-model="user.email" name="email" required=""/>
                     <div ng-show="form.$submitted || form.email.$touched">
                         <span ng-show="form.email.$error.required">Please enter your email.</span>
                         <span ng-show="form.email.$error.email">Please enter a valid email.</span>

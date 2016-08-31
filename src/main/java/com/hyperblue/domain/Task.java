@@ -1,5 +1,7 @@
 package com.hyperblue.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 /**
@@ -13,6 +15,7 @@ public class Task {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @JsonBackReference
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="project_id", referencedColumnName="id")
     private Project project;
