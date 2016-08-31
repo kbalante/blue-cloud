@@ -21,7 +21,8 @@ blueCloud.controller('mainController', function($scope, $http) {
             $scope.task = data;
         });
 
-        $("#project-view").fadeOut();
+        $("#project-view").hide();
+        $("#task-view").fadeIn();
     };
 
 
