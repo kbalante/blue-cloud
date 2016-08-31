@@ -21,18 +21,18 @@
 </div>
 
 <div class="container ng-cloak" id="project-view">
-    <h7>Home | Project</h7>
+    <h7><a href="/home">Home</a> | Project</h7>
     <h6>{{project.name}}</h6>
     <ul class="list-group">
         <li class="list-group-item" ng-repeat="task in project.tasks">
             <span class="badge"></span>
-            <a href="#" ng-click="getTask(task.id)">{{task.summary}}</a>
+            <a href="#" ng-click="getTask(task.id, project.id)">{{task.summary}}</a>
         </li>
     </ul>
 </div>
 
 <div class="container ng-cloak" id="task-view">
-    <h7>Home | Project | Task</h7>
+    <h7><a href="/home">Home</a> | <a href="#" ng-click="getProject(projectid)">Project</a> | Task</h7>
     <h6>{{task.summary}}</h6>
 </div>
 

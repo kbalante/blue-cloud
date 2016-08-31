@@ -23,7 +23,6 @@ public class TaskRestController {
 
     @RequestMapping(method= RequestMethod.GET, value="{id}")
     public Task get(@PathVariable long id) {
-        System.out.println("hello");
         return taskRepository.findOne(id);
     }
 

@@ -13,15 +13,21 @@ blueCloud.controller('mainController', function($scope, $http) {
         });
 
         $("#projects-view").hide();
+        $("#task-view").hide();
         $("#project-view").fadeIn();
+
     };
 
-    $scope.getTask = function(id) {
-        $http.get('http://localhost:8080/tasks/' + id).success(function(data) {
+    $scope.getTask = function(taskid, projectid) {
+
+        $http.get('http://localhost:8080/tasks/' + taskid).success(function(data) {
             $scope.task = data;
         });
 
+        $scope.projectid = projectid;
+
         $("#project-view").hide();
+        $("#projects-view").hide();
         $("#task-view").fadeIn();
     };
 
