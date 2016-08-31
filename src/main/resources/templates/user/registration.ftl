@@ -8,7 +8,6 @@
 <#include "/common/nav.ftl">
 
 <div class="container">
-
     <#if error??>
         <div class="panel panel-warning">
             <div class="panel-heading">
@@ -19,7 +18,6 @@
             </div>
         </div>
     </#if>
-
     <form name="form" action="/registration-submit" method="post" novalidate>
         <fieldset>
             <legend>Registration</legend>
