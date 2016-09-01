@@ -1,7 +1,5 @@
 package com.hyperblue.domain;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -19,19 +17,18 @@ public class Project {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "project_key", nullable = false)
+    @Column(name = "project_key")
     private String projectKey;
 
     @Column(name = "is_private", nullable = false)
     private Boolean isPrivate ;
 
-    @Column(name = "owner_user_id")
+    @Column(name = "owner_user_id", nullable = false)
     private Long ownerUserID ;
 
     @Column(name = "lead_user_id")
     private Long leadUserID ;
 
-    @JsonManagedReference
     @OneToMany(mappedBy="project", targetEntity=Task.class, fetch=FetchType.LAZY)
     private Collection tasks;
 

@@ -30,7 +30,7 @@ drop table bluecloud.project;
 CREATE TABLE bluecloud.project (
   id BIGINT NOT NULL AUTO_INCREMENT,
   name VARCHAR(100) NOT NULL,
-  project_key VARCHAR(5) NOT NULL,
+  project_key VARCHAR(10) NULL,
   is_private boolean NOT NULL,
   owner_user_id BIGINT NOT NULL,
   lead_user_id BIGINT,
@@ -38,6 +38,9 @@ CREATE TABLE bluecloud.project (
   updated_at DATE,
   PRIMARY KEY (id)
 );
+
+alter table bluecloud.project change project_key VARCHAR(5) NULL;
+
 drop table bluecloud.task;
 CREATE TABLE bluecloud.task (
   id BIGINT NOT NULL AUTO_INCREMENT,

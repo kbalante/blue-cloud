@@ -1,4 +1,7 @@
 <div class="container ng-cloak" id="crud-task-view">
+
+    <h7><a href="#" ng-click="showProjects()">Home</a></h7>
+
     <div class="panel panel-warning" ng-show="error">
         <div class="panel-heading">
             <h3 class="panel-title">Warning</h3>

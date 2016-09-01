@@ -1,5 +1,5 @@
 <div class="container ng-cloak" id="project-view">
-    <h7><a href="/home">Home</a> | Project</h7>
+    <h7><a href="#" ng-click="showProjects()">Home</a> | Project</h7>
     <h6>{{project.name}}</h6>
     <ul class="list-group">
         <li class="list-group-item" ng-repeat="task in project.tasks">

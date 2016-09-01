@@ -12,8 +12,8 @@ insert into task (project_id, summary) values (1,'summary test 2');
 insert into task (project_id, summary) values (1,'summary test 3');
 insert into task (project_id, summary) values (1,'summary test 4');
 
-insert into task (project_id, summary) values (2,'summary test 1');
-insert into task (project_id, summary) values (2,'summary test 2');
+insert into task (project_id, summary) values (6,'summary test 1');
+insert into task (project_id, summary) values (6,'summary test 2');
 insert into task (project_id, summary) values (3,'summary test 3');
 insert into task (project_id, summary) values (4,'summary test 4');
 
