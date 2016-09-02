@@ -1,39 +1,44 @@
 package com.hyperblue.controller;
 
-import com.hyperblue.domain.Project;
-import com.hyperblue.domain.User;
-import com.hyperblue.repository.ProjectRepository;
-import com.hyperblue.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-import java.util.Collection;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * User Controller: authenticate and register users
  */
-@Controller
+@RestController
 public class UserController {
+
+    /*
+    @RequestMapping(value = "/", produces = "application/json")
+    public Map<String, String> helloUser(Principal principal) {
+        HashMap<String, String> result = new HashMap<String, String>();
+        result.put("username", principal.getName());
+        return result;
+    }
+
+    @RequestMapping("/logout")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void logout(HttpSession session) {
+        session.invalidate();
+    }
+
+
     /**
      * User Repository
-     */
+     *
     @Autowired
     private UserRepository userRepository;
 
     /**
      * Project Repository
-     */
+     *
     @Autowired
     private ProjectRepository projectRepository;
 
     /**
      * Registration Form
      * @return the registration form view
-     */
+     *
     @RequestMapping("/registration")
     public String registrationForm() {
         return "user/registration";
@@ -42,7 +47,7 @@ public class UserController {
     /**
      * Login Form
      * @return the login form view
-     */
+     *
     @RequestMapping("/login")
     public String loginForm() {
         return "user/login";
@@ -53,8 +58,8 @@ public class UserController {
      * @param user user details
      * @param model model
      * @return the registration thank you page
-     */
-    @RequestMapping(value="/registration-submit", method=RequestMethod.POST)
+     *
+    @RequestMapping(value="/registration-submit", method= RequestMethod.POST)
     public String registrationSubmit(@ModelAttribute User user, Model model) {
 
         // set the encrypted password
@@ -79,7 +84,7 @@ public class UserController {
      * @param user user details
      * @param model model
      * @return the home page if authenticated otherwise go to login page
-     */
+     *
     @RequestMapping(value="/authenticate", method=RequestMethod.POST)
     public String loginSubmit(@ModelAttribute User user, Model model) {
 
@@ -95,14 +100,13 @@ public class UserController {
 
         Collection<Project> projects = projectRepository.findAll();
 
-        /*for(Project project:projects) {
-            Collection<Task> tasks = project.getTasks();
-            for(Task task:tasks) {
-                System.out.println(project.getName() + " : " + task.getSummary());
-            }
-        }*/
         model.addAttribute("projects", projects);
 
         return "home";
     }
+
+
+
+    */
+
 }
