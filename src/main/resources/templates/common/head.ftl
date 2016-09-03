@@ -7,11 +7,12 @@
     <#--
     Angular 1.5.8 JS
     -->
-    <script src="js/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
 
-    <#--
-      Angular Main Module/Controller JS
-    -->
+<#--
+  Angular Main Module/Controller JS
+-->
     <script src="js/main-angular.js"></script>
 
     <#--

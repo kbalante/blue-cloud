@@ -1,5 +1,32 @@
 // create angular app
-var blueCloud = angular.module('blueCloud', []);
+var blueCloud = angular.module('blueCloud', ['ngRoute']);
+
+// configure our routes
+blueCloud.config(function($routeProvider) {
+    $routeProvider
+        // route for the projects page
+        .when('/', {
+            templateUrl : 'html/include/project/projects.html'
+        })
+
+        // route for the project page
+        .when('/project', {
+            templateUrl : 'html/include/project/project.html'
+        })
+
+        // route for the task page
+        .when('/task', {
+            templateUrl : 'html/include/project/task.html'
+        })
+
+        .when('/new-project', {
+            templateUrl : 'html/include/project/crud-project.html'
+        })
+
+        .when('/new-task', {
+            templateUrl : 'html/include/project/crud-task.html'
+        });
+});
 
 // create angular controller
 blueCloud.controller('mainController', function($scope, $http) {
@@ -8,53 +35,31 @@ blueCloud.controller('mainController', function($scope, $http) {
         $scope.projects = data;
     });
 
-    $("#project-view").hide();
-    $("#task-view").hide();
-    $("#crud-project-view").hide();
-    $("#crud-task-view").hide();
-
     /**
      ******** Project REST webservice calls ********
      */
 
     $scope.showProjects = function() {
-        $("#projects-view").fadeIn();
-        $("#project-view").hide();
-        $("#task-view").hide();
-        $("#crud-project-view").hide();
-        $("#crud-task-view").hide();
-    };
-
-    $scope.getProjects = function() {
-
         $http.get('http://localhost:8080/projects').success(function(data) {
             $scope.projects = data;
         });
+    };
 
-        $("#projects-view").fadeIn();
-        $("#project-view").hide();
-        $("#task-view").hide();
-        $("#crud-project-view").hide();
-        $("#crud-task-view").hide();
+    $scope.getProjects = function() {
+        $http.get('http://localhost:8080/projects').success(function(data) {
+            $scope.projects = data;
+        });
     };
 
     $scope.showProjectForm = function() {
-        $("#projects-view").hide();
-        $("#project-view").hide();
-        $("#task-view").hide();
-        $("#crud-project-view").fadeIn();
-        $("#crud-task-view").hide();
+
     };
 
     $scope.getProject = function(id) {
         $http.get('http://localhost:8080/projects/' + id).success(function(data) {
             $scope.project = data;
         });
-        $("#projects-view").hide();
-        $("#project-view").fadeIn();
-        $("#task-view").hide();
-        $("#crud-project-view").hide();
-        $("#crud-task-view").hide();
+
     };
 
     $scope.createProject = function() {
@@ -63,11 +68,7 @@ blueCloud.controller('mainController', function($scope, $http) {
             //$scope.projects.push({id:$scope.id, name:$scope.name});
         });
 
-        $("#projects-view").hide();
-        $("#project-view").fadeIn();
-        $("#task-view").hide();
-        $("#crud-project-view").hide();
-        $("#crud-task-view").hide();
+
     };
 
     $scope.updateProject = function() {
@@ -76,11 +77,7 @@ blueCloud.controller('mainController', function($scope, $http) {
             //$scope.projects.push({id:$scope.id, name:$scope.name});
         });
 
-        $("#projects-view").hide();
-        $("#project-view").fadeIn();
-        $("#task-view").hide();
-        $("#crud-project-view").hide();
-        $("#crud-task-view").hide();
+
     };
 
     $scope.deleteProject = function(id) {
@@ -88,12 +85,7 @@ blueCloud.controller('mainController', function($scope, $http) {
             $scope.project = data;
         });
 
-        // list all the projects
-        $("#projects-view").fadeIn();
-        $("#project-view").hide();
-        $("#task-view").hide();
-        $("#crud-project-view").hide();
-        $("#crud-task-view").hide();
+
     };
 
     /**
@@ -105,24 +97,14 @@ blueCloud.controller('mainController', function($scope, $http) {
             $scope.task = data;
         });
         $scope.projectid = projectid;
-        $("#projects-view").hide();
-        $("#project-view").hide();
-        $("#task-view").fadeIn();
-        $("#crud-project-view").hide();
-        $("#crud-task-view").hide();
+
     };
 
     $scope.showTaskForm = function() {
-        $("#projects-view").hide();
-        $("#project-view").hide();
-        $("#task-view").hide();
-        $("#crud-project-view").hide();
-        $("#crud-task-view").fadeIn();
+
     };
-
-
-    // create hide all divs function
-
 });
+
+
 
 
