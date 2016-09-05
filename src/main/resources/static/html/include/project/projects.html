@@ -4,8 +4,8 @@
         <ul class="list-group">
             <li class="list-group-item" ng-repeat="project in projects">
                 <span class="badge"></span>
-                <a href="#project" ng-click="getProject(project.id)">{{project.name}}</a>
+                <a href="#project" ng-click="findElement('projects', project.id)">{{project.name}}</a>
             </li>
         </ul>
-        <a class="btn btn-primary" href="#new-project">New Project</a>
+        <a class="btn btn-primary" href="#create-project" ng-click="createAction()">Create Project</a>
 </div>

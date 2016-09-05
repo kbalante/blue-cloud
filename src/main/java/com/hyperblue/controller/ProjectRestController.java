@@ -45,7 +45,11 @@ public class ProjectRestController {
      * @return the new project created
      */
     @RequestMapping(method=RequestMethod.POST)
-    public Project create(@RequestBody Project project) {
+    public @ResponseBody Project create(@RequestBody Project project) {
+        System.out.println(project);
+        System.out.println(project.getName());
+        System.out.println(project.getPrivate());
+        System.out.println(project.getOwnerUserID());
         return repo.save(project);
     }
 

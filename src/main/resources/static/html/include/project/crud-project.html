@@ -10,7 +10,9 @@
         {{error}}
         </div>
     </div>
-    <form name="formProject" action="#" ng-submit="createProject()" method="post" novalidate>
+
+    <form name="formProject" method="post" novalidate ng-submit="createElement('projects')">
+
         <fieldset>
             <legend>Project</legend>
             <div class="form-group">
@@ -25,7 +27,7 @@
             <div class="form-group">
                 <label for="inputPrivate" class="col-lg-2 control-label">Visibility</label>
                 <div class="col-lg-10">
-                    <select class="form-control" ng-model="private" id="private" name="private">
+                    <select class="form-control" ng-model="private" name="private">
                         <option value="true">Private</option>
                         <option value="false">Public</option>
                     </select>
@@ -41,8 +43,12 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
+                <div class="col-lg-10 col-lg-offset-2" ng-show="action == 'create'">
                     <button type="submit" class="btn btn-primary" ng-disabled="formProject.$invalid">Create</button>
+                </div>
+                <div class="col-lg-10 col-lg-offset-2" ng-show="action == 'update'">
+                    <button type="submit" class="btn btn-primary" ng-disabled="formProject.$invalid" ng-click="updateElement('projects')">Update</button>
+                    <button type="submit" class="btn btn-primary" ng-disabled="formProject.$invalid" ng-click="deleteElement('projects')">Delete</button>
                 </div>
             </div>
         </fieldset>

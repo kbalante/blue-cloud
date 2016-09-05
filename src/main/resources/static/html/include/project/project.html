@@ -1,11 +1,11 @@
 <div class="container">
     <h7><a href="#/">Home</a> | Project</h7>
-    <h6>{{project.name}}</h6>
+    <h6>{{element.name}}</h6>
     <ul class="list-group">
-        <li class="list-group-item" ng-repeat="task in project.tasks">
+        <li class="list-group-item" ng-repeat="task in element.tasks">
             <span class="badge"></span>
-            <a href="#task" ng-click="getTask(task.id, project.id)">{{task.summary}}</a>
+            <a href="#task" ng-click="getElementAndParent('tasks', task.id, element.id)">{{task.summary}}</a>
         </li>
     </ul>
-    <a class="btn btn-primary" href="#new-task">New Task</a>
+    <a class="btn btn-primary" href="#create-task">Create Task</a> <a class="btn btn-primary" href="#update-project" ng-click="updateAction()">Update Project</a>
 </div>
