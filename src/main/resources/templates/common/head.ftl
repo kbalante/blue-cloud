@@ -19,7 +19,5 @@
       Bootstrap CSS
     -->
     <link rel="stylesheet" href="css/bootstrap.min.css" media="screen"/>
-    <link rel="stylesheet" href="css/custom.min.css" type="text/css"/>
-    <link rel="stylesheet" href="css/component.css" type="text/css"/>
     <link rel="stylesheet" href="css/bluecloud.css" type="text/css"/>
 </head>

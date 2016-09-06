@@ -1,0 +1,3 @@
+
+<a class="btn btn-primary" href="#create-task" ng-click="createAction()">Create Task</a>
+    <a class="btn btn-primary" href="#update-project" ng-click="updateAction(element)">Update Project</a>

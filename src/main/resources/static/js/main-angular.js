@@ -18,6 +18,12 @@ blueCloud.config(function($routeProvider) {
         })
         .when('/update-project', {
             templateUrl : 'html/partial/project/crud-project.html'
+        })
+        .when('/create-task', {
+            templateUrl : 'html/partial/project/crud-task.html'
+        })
+        .when('/update-task', {
+            templateUrl : 'html/partial/project/crud-task.html'
         });
 
 });
@@ -36,6 +42,7 @@ blueCloud.controller('mainController', function($scope, $http) {
     $scope.createAction = function() {
         $scope.action = 'create';
         $scope.message = '';
+        $scope.formData = {};
     };
 
     // this gives us the option to update or delete an element
@@ -54,19 +61,19 @@ blueCloud.controller('mainController', function($scope, $http) {
 
     // creates an element using a type
     $scope.createElement = function(type) {
-        var data = {name:$scope.formData.name, ownerUserID:$scope.formData.ownerUserID, private:$scope.formData.private};
+        var data = $scope.formData;
         $http.post('http://localhost:8080/'+ type, data).success(function(data, status, headers) {
             // create in db and update hazelcast
         });
-        $scope.message = data.name + " created";
+        $scope.message = "created";
     };
 
     $scope.updateElement = function(type, id) {
-        var data = {name:$scope.formData.name, ownerUserID:$scope.formData.ownerUserID, private:$scope.formData.private};
+        var data = $scope.formData;
         $http.put('http://localhost:8080/' + type + '/' + id, data).success(function(data, status, headers) {
             // update in db and update hazelcast
         });
-        $scope.message = data.name + " updated";
+        $scope.message = "updated";
     };
 
     $scope.deleteElement = function(type, id) {

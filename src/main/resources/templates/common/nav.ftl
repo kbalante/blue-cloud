@@ -1,13 +1,9 @@
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#/">Snooz</a>
-        </div>
-
-</nav>
+<div class="container">
+    <ul class="header nav nav-pills">
+        <li class="active"><a href="#/">Projects</a></li>
+        <li><a href="#">Communicate</a></li>
+        <li><a href="#">Documents</a></li>
+        <li><a href="#">Calendar</a></li>
+        <li><a href="#">Share</a></li>
+    </ul>
+</div>

@@ -4,12 +4,25 @@
         <li><a href="#/">Home</a></li>
     </ul>
 
-    <h6>Projects</h6>
-    <ul class="list-group">
-        <li class="list-group-item" ng-repeat="project in projects">
-            <span class="badge"></span>
+    <ul class="nav nav-pills nav-stacked">
+        <li class="active">
+            <a href="#create-project" ng-click="createAction()">Projects
+                <span class="glyphicon glyphicon-plus" style="float:right;padding-top:4px;padding-right:10px;"></span>
+            </a>
+        </li>
+        <li ng-repeat="project in projects">
             <a href="#project" ng-click="findElement('projects', project.id)">{{project.name}}</a>
         </li>
     </ul>
-    <a class="btn btn-primary" href="#create-project" ng-click="createAction()">Create Project</a>
+
+    <ul class="pagination">
+        <li class="disabled"><a href="#">&laquo;</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+    </ul>
+
 </div>

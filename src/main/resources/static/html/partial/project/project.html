@@ -5,13 +5,27 @@
         <li>Project</li>
     </ul>
 
-    <h6>{{element.name}}</h6>
-    <ul class="list-group">
-        <li class="list-group-item" ng-repeat="task in element.tasks">
-            <span class="badge"></span>
+    <ul class="nav nav-pills nav-stacked">
+        <li class="active">
+            <a href="#create-project" ng-click="createAction()">{{element.name}}
+                <span class="glyphicon glyphicon-plus" style="float:right;padding-top:4px;padding-right:10px;"></span>
+                <span class="glyphicon glyphicon-pencil" style="float:right;padding-top:4px;padding-right:10px;"></span>
+                <span class="glyphicon glyphicon-ok" style="float:right;padding-top:4px;padding-right:10px;"></span>
+            </a>
+        </li>
+        <li ng-repeat="task in element.tasks">
             <a href="#task" ng-click="getElementAndParent('tasks', task.id, element.id)">{{task.summary}}</a>
         </li>
     </ul>
-    <a class="btn btn-primary" href="#create-task">Create Task</a>
-    <a class="btn btn-primary" href="#update-project" ng-click="updateAction(element)">Update Project</a>
+
+    <ul class="pagination">
+        <li class="disabled"><a href="#">&laquo;</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+    </ul>
+
 </div>
