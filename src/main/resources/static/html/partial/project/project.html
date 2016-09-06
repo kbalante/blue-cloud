@@ -3,18 +3,19 @@
     <ul class="breadcrumb">
         <li><a href="#/">Home</a></li>
         <li>Project</li>
+        <li style="float:right">
+            <a href="#create-project" ng-click="createAction()" data-toggle="tooltip" title="Create a new task"><span class="glyphicon glyphicon-plus"></span></a>
+            <a href="#update-project" ng-click="updateAction(element)" data-toggle="tooltip" title="Update this project"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="#snooze"><span class="glyphicon glyphicon-time" data-toggle="tooltip" title="Snooze project"></span></a>
+        </li>
     </ul>
 
     <ul class="nav nav-pills nav-stacked">
         <li class="active">
-            <a href="#create-project" ng-click="createAction()">{{element.name}}
-                <span class="glyphicon glyphicon-plus" style="float:right;padding-top:4px;padding-right:10px;"></span>
-                <span class="glyphicon glyphicon-pencil" style="float:right;padding-top:4px;padding-right:10px;"></span>
-                <span class="glyphicon glyphicon-ok" style="float:right;padding-top:4px;padding-right:10px;"></span>
-            </a>
+            <a href="#create-project" ng-click="createAction()">{{element.name}}</a>
         </li>
         <li ng-repeat="task in element.tasks">
-            <a href="#task" ng-click="getElementAndParent('tasks', task.id, element.id)">{{task.summary}}</a>
+            <a href="#task" ng-click="getElementAndParent('tasks', task.id, 'projects', element.id)">{{task.summary}}</a>
         </li>
     </ul>
 

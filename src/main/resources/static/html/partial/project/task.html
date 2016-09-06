@@ -3,8 +3,34 @@
         <li><a href="#/">Home</a></li>
         <li><a href="#project" ng-click="getProject(projectid)">Project</a></li>
         <li>Task</li>
+        <li style="float:right">
+            <a href="#create-comment" ng-click="createAction()" data-toggle="tooltip" title="Add a comment"><span class="glyphicon glyphicon-comment"></span></a>
+            <a href="#update-task" ng-click="updateAction(element)" data-toggle="tooltip" title="Update this task"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="#snooze"><span class="glyphicon glyphicon-time" data-toggle="tooltip" title="Snooze task"></span></a>
+        </li>
     </ul>
 
-    <h6>{{task.summary}}</h6>
-    <p>{{task.description}}</p>
+    <ul class="nav nav-pills nav-stacked">
+        <li class="active">
+            <a href="#create-project" ng-click="createAction()">{{parent.name}}</a>
+        </li>
+    </ul>
+
+    <h6>{{child.summary}}</h6>
+    <p>{{child.description}}</p>
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a aria-expanded="false" href="#home" data-toggle="tab">Attachments</a></li>
+        <li><a aria-expanded="true" href="#profile" data-toggle="tab">Comments</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <br/>
+        <div class="tab-pane fade" id="home">
+            <p>Lorem ipsum dolor sit amet, vitae felis elit erat auctor, risus vitae litora eu quam eleifend, magna imperdiet sed. Vestibulum donec laoreet ut varius, rhoncus </p>
+        </div>
+        <div class="tab-pane fade active in" id="profile">
+            <p>Lorem ipsum dolor sit amet, vitae felis elit erat auctor, risus vitae litora eu quam eleifend, magna imperdiet sed. Vestibulum donec laoreet ut varius, rhoncus </p>
+        </div>
+    </div>
+
 </div>

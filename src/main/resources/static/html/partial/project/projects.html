@@ -2,13 +2,16 @@
 
     <ul class="breadcrumb">
         <li><a href="#/">Home</a></li>
+        <li style="float:right">
+            <a href="#create-project" ng-click="createAction()" data-toggle="tooltip" title="Create a new project">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+        </li>
     </ul>
 
     <ul class="nav nav-pills nav-stacked">
         <li class="active">
-            <a href="#create-project" ng-click="createAction()">Projects
-                <span class="glyphicon glyphicon-plus" style="float:right;padding-top:4px;padding-right:10px;"></span>
-            </a>
+            <a href="#create-project" ng-click="createAction()">Projects</a>
         </li>
         <li ng-repeat="project in projects">
             <a href="#project" ng-click="findElement('projects', project.id)">{{project.name}}</a>

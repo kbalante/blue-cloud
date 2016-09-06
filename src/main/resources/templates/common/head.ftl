@@ -14,6 +14,7 @@
       Angular Main Module/Controller JS
     -->
     <script src="js/main-angular.js"></script>
+    <script src="js/util.js"></script>
 
     <#--
       Bootstrap CSS

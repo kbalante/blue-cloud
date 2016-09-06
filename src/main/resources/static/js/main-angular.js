@@ -84,34 +84,15 @@ blueCloud.controller('mainController', function($scope, $http) {
         $scope.message = "deleted";
     };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /**
-     ******** Task REST webservice calls ********
-     */
-
-    $scope.getElementAndParent = function(type, taskid, projectid) {
-        $http.get('http://localhost:8080/' + type + '/' + taskid).success(function(data) {
-            $scope.task = data;
+    $scope.getElementAndParent = function(type1, id1, type2, id2) {
+        $http.get('http://localhost:8080/' + type1 + '/' + id1).success(function(data) {
+            $scope.child = data;
         });
-        $scope.projectid = projectid;
+
+        $http.get('http://localhost:8080/' + type2 + '/' + id2).success(function(data) {
+            $scope.parent = data;
+        });
+
     };
 
 });

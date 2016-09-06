@@ -3,3 +3,12 @@
     padding-bottom: 10px;
     padding-top: 10px;
 }
+.breadcrumb>li+li:nth-last-child(1):before {
+    content: " ";
+}
+
+.glyphicon {
+    float:right;
+    padding-top:4px;
+    padding-right:20px;
+}

@@ -2,16 +2,9 @@
 
     <ul class="breadcrumb">
         <li><a href="#/">Home</a></li>
+        <li><a href="#/project" ng-click="findElement('projects', element.id)">Project</a></li>
+        <li> </li>
     </ul>
-
-    <div class="panel panel-primary" ng-show="!message">
-        <div class="panel-heading">
-            <h3 class="panel-title"></h3>
-        </div>
-        <div class="panel-body">
-            Create new project
-        </div>
-    </div>
 
     <div class="panel panel-success" ng-show="message">
         <div class="panel-heading">
