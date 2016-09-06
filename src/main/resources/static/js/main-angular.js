@@ -6,25 +6,25 @@ blueCloud.config(function($routeProvider) {
     $routeProvider
         // route for the projects page
         .when('/', {
-            templateUrl : 'html/include/project/projects.html'
+            templateUrl : 'html/partial/project/projects.html'
         })
 
         // route for the project page
         .when('/project', {
-            templateUrl : 'html/include/project/project.html'
+            templateUrl : 'html/partial/project/project.html'
         })
 
         // route for the task page
         .when('/task', {
-            templateUrl : 'html/include/project/task.html'
+            templateUrl : 'html/partial/project/task.html'
         })
 
         .when('/create-project', {
-            templateUrl : 'html/include/project/crud-project.html'
+            templateUrl : 'html/partial/project/crud-project.html'
         })
 
         .when('/update-project', {
-            templateUrl : 'html/include/project/crud-project.html'
+            templateUrl : 'html/partial/project/crud-project.html'
         });
 
 });
@@ -35,9 +35,6 @@ blueCloud.controller('mainController', function($scope, $http, $route, $location
     // initialize the form data fields
     $scope.formData = {};
 
-    $scope.booleans = ["true", "false"];
-
-
     $http.get('http://localhost:8080/projects').success(function(data) {
         $scope.projects = data;
     });
@@ -45,13 +42,11 @@ blueCloud.controller('mainController', function($scope, $http, $route, $location
     // create a new element
     $scope.createAction = function() {
         $scope.action = 'create';
-        $scope.method = 'post';
     };
 
     // this gives us the option to update or delete an element
     $scope.updateAction = function(element) {
         $scope.action = 'update';
-        $scope.method = 'update';
         $scope.formData = element;
     };
 
