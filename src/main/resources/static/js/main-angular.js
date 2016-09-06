@@ -26,10 +26,17 @@ blueCloud.config(function($routeProvider) {
         .when('/update-project', {
             templateUrl : 'html/include/project/crud-project.html'
         });
+
 });
 
 // create angular controller
 blueCloud.controller('mainController', function($scope, $http, $route, $location) {
+
+    // initialize the form data fields
+    $scope.formData = {};
+
+    $scope.booleans = ["true", "false"];
+
 
     $http.get('http://localhost:8080/projects').success(function(data) {
         $scope.projects = data;
@@ -42,14 +49,11 @@ blueCloud.controller('mainController', function($scope, $http, $route, $location
     };
 
     // this gives us the option to update or delete an element
-    $scope.updateAction = function() {
+    $scope.updateAction = function(element) {
         $scope.action = 'update';
         $scope.method = 'update';
+        $scope.formData = element;
     };
-
-    /**
-     ******** Project REST webservice calls ********
-     */
 
     $scope.findAllElements = function(type) {
         $http.get('http://localhost:8080/' + type).success(function(data) {
@@ -64,18 +68,19 @@ blueCloud.controller('mainController', function($scope, $http, $route, $location
     };
 
     $scope.createElement = function(type) {
-        var data = {name:$scope.name, ownerUserID:$scope.ownerUserID, private:$scope.private};
-        alert(data.ownerUserID);
-        /*$http.post('http://localhost:8080/'+ type, data).success(function(data, status, headers) {
+        var data = {name:$scope.formData.name, ownerUserID:$scope.formData.ownerUserID, private:$scope.formData.private};
+        $http.post('http://localhost:8080/'+ type, data).success(function(data, status, headers) {
             // create in db and update hazelcast
-        });*/
+        });
+        alert('Item Created');
     };
 
     $scope.updateElement = function(type, id) {
-        var data = {name:$scope.name, ownerUserID:$scope.ownerUserID, private:$scope.private};
+        var data = {name:$scope.formData.name, ownerUserID:$scope.formData.ownerUserID, private:$scope.formData.private};
         $http.put('http://localhost:8080/' + type + '/' + id, data).success(function(data, status, headers) {
             // update in db and update hazelcast
         });
+        alert('Item updated');
     };
 
     $scope.deleteElement = function(type, id) {
@@ -83,6 +88,7 @@ blueCloud.controller('mainController', function($scope, $http, $route, $location
             $scope.element = data;
             // delete in db and update hazelcast
         });
+        alert('Item Deleted');
     };
 
 
