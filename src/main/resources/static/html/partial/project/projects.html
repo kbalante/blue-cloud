@@ -1,11 +1,15 @@
 <div class="container">
-    <h7><a href="#/">Home</a>
-        <h6>Projects</h6>
-        <ul class="list-group">
-            <li class="list-group-item" ng-repeat="project in projects">
-                <span class="badge"></span>
-                <a href="#project" ng-click="findElement('projects', project.id)">{{project.name}}</a>
-            </li>
-        </ul>
-        <a class="btn btn-primary" href="#create-project" ng-click="createAction()">Create Project</a>
+
+    <ul class="breadcrumb">
+        <li><a href="#/">Home</a></li>
+    </ul>
+
+    <h6>Projects</h6>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="project in projects">
+            <span class="badge"></span>
+            <a href="#project" ng-click="findElement('projects', project.id)">{{project.name}}</a>
+        </li>
+    </ul>
+    <a class="btn btn-primary" href="#create-project" ng-click="createAction()">Create Project</a>
 </div>

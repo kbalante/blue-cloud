@@ -1,40 +1,41 @@
 <div class="container">
 
-    <h7><a href="#/">Home</a></h7>
+    <ul class="breadcrumb">
+        <li><a href="#/">Home</a></li>
+    </ul>
 
-    <div class="panel panel-warning" ng-show="error">
+    <div class="panel panel-primary" ng-show="message">
         <div class="panel-heading">
-            <h3 class="panel-title">Warning</h3>
+            <h3 class="panel-title"></h3>
         </div>
         <div class="panel-body">
-        {{error}}
+        Project {{message}}
         </div>
     </div>
 
     <form name="formProject" method="post" novalidate>
-
         <fieldset>
             <legend>Project</legend>
             <div class="form-group">
-                <label for="inputName" class="col-lg-2 control-label">Name</label>
+                <label for="name" class="col-lg-2 control-label">Name</label>
                 <div class="col-lg-10">
-                    <input class="form-control" type="text" ng-model="formData.name" name="name" required="" />
+                    <input class="form-control" type="text" ng-model="formData.name" name="name" id="name" required="" />
                     <div ng-show="formProject.$submitted || formProject.name.$touched">
                         <span ng-show="formProject.name.$error.required">Please enter your name.</span>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputPrivate" class="col-lg-2 control-label">Visibility</label>
+                <label for="visibility" class="col-lg-2 control-label">Visibility</label>
                 <div class="col-lg-10">
-                    <select class="form-control" ng-model="formData.private" ng-options="x for x in [true,false]">
+                    <select class="form-control" ng-model="formData.private" ng-options="x for x in [true,false]" id="visibility">
                     </select>
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputOwner" class="col-lg-2 control-label">Owner</label>
+                <label for="ownerUserID" class="col-lg-2 control-label">Owner</label>
                 <div class="col-lg-10">
-                    <input class="form-control" type="text" ng-model="formData.ownerUserID" name="ownerUserID" required="" />
+                    <input class="form-control" type="text" ng-model="formData.ownerUserID" name="ownerUserID" id="ownerUserID" required="" />
                     <div ng-show="formProject.$submitted || formProject.ownerUserID.$touched">
                         <span ng-show="formProject.ownerUserID.$error.required">Please enter your project owner.</span>
                     </div>
