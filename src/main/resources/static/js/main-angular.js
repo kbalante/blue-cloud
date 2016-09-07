@@ -35,7 +35,7 @@ blueCloud.controller('mainController', function($scope, $http) {
     $scope.formData = {};
 
     $http.get('http://localhost:8080/projects').success(function(data) {
-        $scope.projects = data;
+        $scope.elements = data;
     });
 
     // create a new element
@@ -52,6 +52,12 @@ blueCloud.controller('mainController', function($scope, $http) {
         $scope.message = '';
     };
 
+    $scope.findAllElements = function(type) {
+        $http.get('http://localhost:8080/'+ type).success(function(data) {
+            $scope.elements = data;
+        });
+    };
+
     // finds an element using the type and an id
     $scope.findElement = function(type, id) {
         $http.get('http://localhost:8080/'+ type + '/' + id).success(function(data) {
@@ -63,7 +69,7 @@ blueCloud.controller('mainController', function($scope, $http) {
     $scope.createElement = function(type) {
         var data = $scope.formData;
         $http.post('http://localhost:8080/'+ type, data).success(function(data, status, headers) {
-            // create in db and update hazelcast
+            $scope.elements.push(data);
         });
         $scope.message = "created";
     };
@@ -71,15 +77,15 @@ blueCloud.controller('mainController', function($scope, $http) {
     $scope.updateElement = function(type, id) {
         var data = $scope.formData;
         $http.put('http://localhost:8080/' + type + '/' + id, data).success(function(data, status, headers) {
-            // update in db and update hazelcast
+            //$scope.elements.objects[index] = data;
         });
         $scope.message = "updated";
     };
 
     $scope.deleteElement = function(type, id) {
         $http.delete('http://localhost:8080/'+ type + '/' + id).success(function(data) {
-            $scope.element = data;
-            // delete in db and update hazelcast
+            var index = $scope.elements.indexOf(data);
+            $scope.elements.splice(index, 1);
         });
         $scope.message = "deleted";
     };

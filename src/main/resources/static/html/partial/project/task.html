@@ -1,7 +1,7 @@
 <div class="container">
     <ul class="breadcrumb">
         <li><a href="#/">Home</a></li>
-        <li><a href="#project" ng-click="getProject(projectid)">Project</a></li>
+        <li><a href="#project" ng-click="findElement('projects', project.id)">Project</a></li>
         <li>Task</li>
         <li style="float:right">
             <a href="#create-comment" ng-click="createAction()" data-toggle="tooltip" title="Add a comment"><span class="glyphicon glyphicon-comment"></span></a>
@@ -12,11 +12,11 @@
 
     <ul class="nav nav-pills nav-stacked">
         <li class="active">
-            <a href="#create-project" ng-click="createAction()">{{parent.name}}</a>
+            <a href="#project" ng-click="findElement('projects', project.id)">{{parent.name}}</a>
         </li>
     </ul>
 
-    <h6>{{child.summary}}</h6>
+    <h4>{{child.summary}}</h4>
     <p>{{child.description}}</p>
 
     <ul class="nav nav-tabs">
