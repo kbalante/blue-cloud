@@ -2,7 +2,8 @@
 
     <ul class="breadcrumb">
         <li><a href="#/">Home</a></li>
-        <li><a href="#/project" ng-click="findElement('projects', element.id)">Project</a></li>
+        <li ng-show="action == 'update'"><a href="#/project" ng-click="findElement('projects', element.id)">Project</a></li>
+        <li ng-show="action == 'create'">Create Project</li>
         <li> </li>
     </ul>
 

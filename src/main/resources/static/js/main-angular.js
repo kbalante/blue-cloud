@@ -39,10 +39,11 @@ blueCloud.controller('mainController', function($scope, $http) {
     });
 
     // create a new element
-    $scope.createAction = function() {
+    $scope.createAction = function(element) {
         $scope.action = 'create';
         $scope.message = '';
         $scope.formData = {};
+        $scope.element = element;
     };
 
     // this gives us the option to update or delete an element
@@ -70,6 +71,9 @@ blueCloud.controller('mainController', function($scope, $http) {
         var data = $scope.formData;
         $http.post('http://localhost:8080/'+ type, data).success(function(data, status, headers) {
             $scope.elements.push(data);
+
+            // what happens for tasks
+
         });
         $scope.message = "created";
     };
@@ -94,11 +98,9 @@ blueCloud.controller('mainController', function($scope, $http) {
         $http.get('http://localhost:8080/' + type1 + '/' + id1).success(function(data) {
             $scope.child = data;
         });
-
         $http.get('http://localhost:8080/' + type2 + '/' + id2).success(function(data) {
             $scope.parent = data;
         });
-
     };
 
 });

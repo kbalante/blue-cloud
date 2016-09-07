@@ -1,18 +1,18 @@
 <div class="container">
     <ul class="breadcrumb">
         <li><a href="#/">Home</a></li>
-        <li><a href="#project" ng-click="findElement('projects', project.id)">Project</a></li>
+        <li><a href="#project" ng-click="findElement('projects', parent.id)">Project</a></li>
         <li>Task</li>
         <li style="float:right">
             <a href="#create-comment" ng-click="createAction()" data-toggle="tooltip" title="Add a comment"><span class="glyphicon glyphicon-comment"></span></a>
-            <a href="#update-task" ng-click="updateAction(element)" data-toggle="tooltip" title="Update this task"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a href="#update-task" ng-click="updateAction(child)" data-toggle="tooltip" title="Update this task"><span class="glyphicon glyphicon-pencil"></span></a>
             <a href="#snooze"><span class="glyphicon glyphicon-time" data-toggle="tooltip" title="Snooze task"></span></a>
         </li>
     </ul>
 
     <ul class="nav nav-pills nav-stacked">
         <li class="active">
-            <a href="#project" ng-click="findElement('projects', project.id)">{{parent.name}}</a>
+            <a href="#project" ng-click="findElement('projects', parent.id)">{{parent.name}}</a>
         </li>
     </ul>
 

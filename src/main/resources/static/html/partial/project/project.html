@@ -4,7 +4,7 @@
         <li><a href="#/">Home</a></li>
         <li>Project</li>
         <li style="float:right">
-            <a href="#create-project" ng-click="createAction()" data-toggle="tooltip" title="Create a new task"><span class="glyphicon glyphicon-plus"></span></a>
+            <a href="#create-task" ng-click="createAction(element)" data-toggle="tooltip" title="Create a new task"><span class="glyphicon glyphicon-plus"></span></a>
             <a href="#update-project" ng-click="updateAction(element)" data-toggle="tooltip" title="Update this project"><span class="glyphicon glyphicon-pencil"></span></a>
             <a href="#snooze"><span class="glyphicon glyphicon-time" data-toggle="tooltip" title="Snooze project"></span></a>
         </li>
@@ -12,7 +12,7 @@
 
     <ul class="nav nav-pills nav-stacked">
         <li class="active">
-            <a href="#create-project" ng-click="createAction()">{{element.name}}</a>
+            <a href="#project" ng-click="findElement('projects', element.id)">{{element.name}} <span class="glyphicon glyphicon-refresh floatright"></span></a>
         </li>
         <li ng-repeat="task in element.tasks">
             <a href="#task" ng-click="getElementAndParent('tasks', task.id, 'projects', element.id)">{{task.summary}}</a>

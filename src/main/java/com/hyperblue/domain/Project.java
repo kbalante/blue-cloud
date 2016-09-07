@@ -1,5 +1,8 @@
 package com.hyperblue.domain;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import java.util.Collection;
 
@@ -7,6 +10,7 @@ import java.util.Collection;
  * Project entity
  */
 @Entity
+@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 public class Project {
 
     @Id
@@ -29,7 +33,7 @@ public class Project {
     @Column(name = "lead_user_id")
     private Long leadUserID ;
 
-    @OneToMany(mappedBy="project", targetEntity=Task.class, fetch=FetchType.LAZY)
+    @OneToMany(mappedBy="project", targetEntity=Task.class)
     private Collection tasks;
 
     public Project() {
