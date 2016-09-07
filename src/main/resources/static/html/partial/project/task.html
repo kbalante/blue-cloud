@@ -1,12 +1,13 @@
 <div class="container">
     <ul class="breadcrumb">
-        <li><a href="#/">Home</a></li>
+        <li><a href="#/" ng-click="findAllElements('projects')">Home</a></li>
         <li><a href="#project" ng-click="findElement('projects', parent.id)">Project</a></li>
         <li>Task</li>
         <li style="float:right">
             <a href="#create-comment" ng-click="createAction()" data-toggle="tooltip" title="Add a comment"><span class="glyphicon glyphicon-comment"></span></a>
             <a href="#update-task" ng-click="updateAction(child)" data-toggle="tooltip" title="Update this task"><span class="glyphicon glyphicon-pencil"></span></a>
-            <a href="#snooze"><span class="glyphicon glyphicon-time" data-toggle="tooltip" title="Snooze task"></span></a>
+            <a href="#pin-task"><span class="glyphicon glyphicon-pushpin" data-toggle="tooltip" title="Pin task to dashboard"></span></a>
+            <a href="#complete-task"><span class="glyphicon glyphicon-ok" data-toggle="tooltip" title="Mark task as completed"></span></a>
         </li>
     </ul>
 

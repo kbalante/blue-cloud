@@ -25,7 +25,6 @@ blueCloud.config(function($routeProvider) {
         .when('/update-task', {
             templateUrl : 'html/partial/project/crud-task.html'
         });
-
 });
 
 // create angular controller
@@ -71,9 +70,6 @@ blueCloud.controller('mainController', function($scope, $http) {
         var data = $scope.formData;
         $http.post('http://localhost:8080/'+ type, data).success(function(data, status, headers) {
             $scope.elements.push(data);
-
-            // what happens for tasks
-
         });
         $scope.message = "created";
     };
@@ -92,6 +88,7 @@ blueCloud.controller('mainController', function($scope, $http) {
             $scope.elements.splice(index, 1);
         });
         $scope.message = "deleted";
+        $scope.formData = {};
     };
 
     $scope.getElementAndParent = function(type1, id1, type2, id2) {

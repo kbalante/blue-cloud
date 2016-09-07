@@ -35,7 +35,6 @@ public class TaskRestController {
      */
     @RequestMapping(method=RequestMethod.POST)
     public Task create(@RequestBody Task task) {
-        System.out.println("================================================" +task);
         return repo.save(task);
     }
 

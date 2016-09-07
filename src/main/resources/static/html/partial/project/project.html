@@ -1,12 +1,12 @@
 <div class="container">
 
     <ul class="breadcrumb">
-        <li><a href="#/">Home</a></li>
+        <li><a href="#/" ng-click="findAllElements('projects')">Home</a></li>
         <li>Project</li>
         <li style="float:right">
             <a href="#create-task" ng-click="createAction(element)" data-toggle="tooltip" title="Create a new task"><span class="glyphicon glyphicon-plus"></span></a>
             <a href="#update-project" ng-click="updateAction(element)" data-toggle="tooltip" title="Update this project"><span class="glyphicon glyphicon-pencil"></span></a>
-            <a href="#snooze"><span class="glyphicon glyphicon-time" data-toggle="tooltip" title="Snooze project"></span></a>
+            <a href="#pin-project"><span class="glyphicon glyphicon-pushpin data-toggle="tooltip" title="Pin project to dashboard"></span></a>
         </li>
     </ul>
 

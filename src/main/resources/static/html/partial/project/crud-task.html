@@ -1,7 +1,7 @@
 <div class="container">
 
     <ul class="breadcrumb">
-        <li><a href="#/">Home</a></li>
+        <li><a href="#/" ng-click="findAllElements('projects')">Home</a></li>
         <li><a href="#project" ng-click="findElement('projects', element.id)">Project</a></li>
         <li ng-show="action == 'update'">Task</li>
         <li ng-show="action == 'create'">Create Task</li>
