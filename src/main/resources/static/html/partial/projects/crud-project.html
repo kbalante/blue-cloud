@@ -1,8 +1,8 @@
 <div class="container">
 
     <ul class="breadcrumb">
-        <li><a href="#projects-home" ng-click="findAllElements('projects')">Home</a></li>
-        <li ng-show="action == 'update'"><a href="#projects-view-project" ng-click="findElement('projects', element.id)">Project</a></li>
+        <li><a href="#/projects-home" ng-click="findAllElements('projects')">Home</a></li>
+        <li ng-show="action == 'update'"><a href="#/projects-view-project" ng-click="findElement('projects', element.id)">Project</a></li>
         <li ng-show="action == 'create'">Create Project</li>
         <li> </li>
     </ul>
@@ -35,16 +35,9 @@
                     </select>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="ownerUserID" class="col-lg-2 control-label">Owner</label>
-                <div class="col-lg-10">
-                    <input class="form-control" type="text" ng-model="formData.ownerUserID" name="ownerUserID" id="ownerUserID" required="" />
-                    <div ng-show="form.$submitted || form.ownerUserID.$touched">
-                        <span ng-show="form.ownerUserID.$error.required">Please enter your project owner.</span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
+
+
+            <div class="form-group" ng-init="formData.ownerUserID = 1">
                 <div class="col-lg-10 col-lg-offset-2" ng-show="action == 'create'">
                     <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid" ng-click="createElement('projects')">Create</button>
                 </div>
