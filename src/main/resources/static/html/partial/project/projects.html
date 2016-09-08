@@ -1,9 +1,9 @@
 <div class="container">
 
     <ul class="breadcrumb">
-        <li><a href="#/" ng-click="findAllElements('projects')">Home</a></li>
+        <li><a href="#projects-home" ng-click="findAllElements('projects')">Home</a></li>
         <li style="float:right">
-            <a href="#create-project" ng-click="createAction()" data-toggle="tooltip" title="Create a new project">
+            <a href="#projects-create-project" ng-click="createAction()" data-toggle="tooltip" title="Create a new project">
                 <span class="glyphicon glyphicon-plus"></span>
             </a>
         </li>
@@ -11,10 +11,10 @@
 
     <ul class="nav nav-pills nav-stacked">
         <li class="active">
-            <a href="#/" ng-click="findAllElements('projects')">Projects <span class="glyphicon glyphicon-refresh floatright"></span></a>
+            <a href="#projects-home" ng-click="findAllElements('projects')">Projects <span class="glyphicon glyphicon-refresh floatright"></span></a>
         </li>
         <li ng-repeat="project in elements">
-            <a href="#project" ng-click="findElement('projects', project.id)">{{project.name}}</a>
+            <a href="#projects-view-project" ng-click="findElement('projects', project.id)">{{project.name}}</a>
         </li>
     </ul>
 

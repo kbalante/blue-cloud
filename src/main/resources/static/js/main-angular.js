@@ -7,22 +7,25 @@ blueCloud.config(function($routeProvider) {
         .when('/', {
             templateUrl : 'html/partial/project/projects.html'
         })
-        .when('/project', {
+        .when('/projects-home', {
+            templateUrl : 'html/partial/project/projects.html'
+        })
+        .when('/projects-view-project', {
             templateUrl : 'html/partial/project/project.html'
         })
-        .when('/task', {
+        .when('/projects-view-task', {
             templateUrl : 'html/partial/project/task.html'
         })
-        .when('/create-project', {
+        .when('/projects-create-project', {
             templateUrl : 'html/partial/project/crud-project.html'
         })
-        .when('/update-project', {
+        .when('/projects-update-project', {
             templateUrl : 'html/partial/project/crud-project.html'
         })
-        .when('/create-task', {
+        .when('/projects-create-task', {
             templateUrl : 'html/partial/project/crud-task.html'
         })
-        .when('/update-task', {
+        .when('/projects-update-task', {
             templateUrl : 'html/partial/project/crud-task.html'
         });
 });

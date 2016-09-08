@@ -10,7 +10,7 @@ public class HomeController {
      * Load the home page
      * @return the home template
      */
-    @RequestMapping("/")
+    @RequestMapping(value={"/"})
     public String home() {
         return "home";
     }
