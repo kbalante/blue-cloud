@@ -21,17 +21,23 @@
     <p>{{child.description}}</p>
 
     <ul class="nav nav-tabs">
-        <li class="active"><a aria-expanded="false" href="#home" data-toggle="tab">Attachments</a></li>
-        <li><a aria-expanded="true" href="#profile" data-toggle="tab">Comments</a></li>
+        <li class="active"><a aria-expanded="false" data-target="#status" data-toggle="tab">Status</a></li>
+        <li><a aria-expanded="false" data-target="#priority" data-toggle="tab">Priority</a></li>
+        <li><a aria-expanded="true" data-target="#comments" data-toggle="tab">Comments</a></li>
+        <li><a aria-expanded="false" data-target="#attachments" data-toggle="tab">Attachments</a></li>
     </ul>
     <div id="myTabContent" class="tab-content">
         <br/>
-        <div class="tab-pane fade" id="home">
-            <p>Lorem ipsum dolor sit amet, vitae felis elit erat auctor, risus vitae litora eu quam eleifend, magna imperdiet sed. Vestibulum donec laoreet ut varius, rhoncus </p>
+        <div class="tab-pane active" id="status">
+            <p>Status Lorem ipsum dolor sit amet, vitae felis elit erat auctor, risus vitae litora eu quam eleifend, magna imperdiet sed. Vestibulum donec laoreet ut varius, rhoncus </p>
         </div>
-        <div class="tab-pane fade active in" id="profile">
-            <p>Lorem ipsum dolor sit amet, vitae felis elit erat auctor, risus vitae litora eu quam eleifend, magna imperdiet sed. Vestibulum donec laoreet ut varius, rhoncus </p>
+        <div class="tab-pane fade in" id="priority">
+            <p>Priority Lorem ipsum dolor sit amet, vitae felis elit erat auctor, risus vitae litora eu quam eleifend, magna imperdiet sed. Vestibulum donec laoreet ut varius, rhoncus </p>
+        </div>
+        <div class="tab-pane fade in" id="comments">
+            <p>Comments Lorem ipsum dolor sit amet, vitae felis elit erat auctor, risus vitae litora eu quam eleifend, magna imperdiet sed. Vestibulum donec laoreet ut varius, rhoncus </p>
+        </div>
+        <div class="tab-pane fade in" id="attachments">
+            <p>Attachments Lorem ipsum dolor sit amet, vitae felis elit erat auctor, risus vitae litora eu quam eleifend, magna imperdiet sed. Vestibulum donec laoreet ut varius, rhoncus </p>
         </div>
     </div>
-
-</div>
