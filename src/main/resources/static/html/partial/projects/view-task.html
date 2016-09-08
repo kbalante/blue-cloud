@@ -3,10 +3,9 @@
         <li><a href="#/projects-home" ng-click="findAllElements('projects')">Home</a></li>
         <li><a href="#/projects-view-project" ng-click="findElement('projects', parent.id)">Project</a></li>
         <li>Task</li>
-        <li style="float:right">
+        <li class="float-right">
             <a href="#/projects-create-comment" ng-click="createAction()" data-toggle="tooltip" title="Add a comment"><span class="glyphicon glyphicon-comment"></span></a>
             <a href="#/projects-update-task" ng-click="updateAction(child)" data-toggle="tooltip" title="Update this task"><span class="glyphicon glyphicon-pencil"></span></a>
-            <a href="#/projects-pin-task"><span class="glyphicon glyphicon-pushpin" data-toggle="tooltip" title="Pin task to dashboard"></span></a>
             <a href="#/projects-complete-task"><span class="glyphicon glyphicon-ok" data-toggle="tooltip" title="Mark task as completed"></span></a>
         </li>
     </ul>

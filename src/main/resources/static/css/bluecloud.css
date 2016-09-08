@@ -17,10 +17,20 @@ h4 {
     padding-top:10px;
 }
 
-.floatright {
+.float-right {
     float:right;
 }
 
 .dashboard-nav {
     padding-bottom: 20px;
+}
+
+.hover-class {
+    display: block;
+    visibility:hidden;
+}
+
+a:hover span {
+    display: block;
+    visibility:visible;
 }
