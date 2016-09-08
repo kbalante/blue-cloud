@@ -27,11 +27,29 @@ blueCloud.config(function($routeProvider) {
         })
         .when('/projects-update-task', {
             templateUrl : 'html/partial/projects/crud-task.html'
+        })
+
+
+        .when('/communicate-home', {
+            templateUrl : 'html/partial/communicate/home.html'
+        })
+        .when('/dashboard-home', {
+            templateUrl : 'html/partial/dashboard/home.html'
+        })
+        .when('/calendar-home', {
+            templateUrl : 'html/partial/calendar/home.html'
+        })
+        .when('/people-home', {
+            templateUrl : 'html/partial/people/home.html'
+        })
+        .when('/documents-home', {
+            templateUrl : 'html/partial/documents/home.html'
         });
+
 });
 
 // create angular controller
-blueCloud.controller('mainController', function($scope, $http) {
+blueCloud.controller('mainController', function($scope, $http, $location) {
 
     // initialize the form data fields
     $scope.formData = {};
@@ -101,6 +119,11 @@ blueCloud.controller('mainController', function($scope, $http) {
         $http.get('http://localhost:8080/' + type2 + '/' + id2).success(function(data) {
             $scope.parent = data;
         });
+    };
+
+    $scope.isActive = function (viewLocation) {
+        var active = ($location.path().indexOf(viewLocation) > -1);
+        return active;
     };
 
 });
