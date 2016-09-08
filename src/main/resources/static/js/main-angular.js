@@ -5,28 +5,28 @@ var blueCloud = angular.module('blueCloud', ['ngRoute']);
 blueCloud.config(function($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl : 'html/partial/project/projects.html'
+            templateUrl : 'html/partial/projects/home.html'
         })
         .when('/projects-home', {
-            templateUrl : 'html/partial/project/projects.html'
+            templateUrl : 'html/partial/projects/home.html'
         })
         .when('/projects-view-project', {
-            templateUrl : 'html/partial/project/project.html'
+            templateUrl : 'html/partial/projects/view-project.html'
         })
         .when('/projects-view-task', {
-            templateUrl : 'html/partial/project/task.html'
+            templateUrl : 'html/partial/projects/view-task.html'
         })
         .when('/projects-create-project', {
-            templateUrl : 'html/partial/project/crud-project.html'
+            templateUrl : 'html/partial/projects/crud-project.html'
         })
         .when('/projects-update-project', {
-            templateUrl : 'html/partial/project/crud-project.html'
+            templateUrl : 'html/partial/projects/crud-project.html'
         })
         .when('/projects-create-task', {
-            templateUrl : 'html/partial/project/crud-task.html'
+            templateUrl : 'html/partial/projects/crud-task.html'
         })
         .when('/projects-update-task', {
-            templateUrl : 'html/partial/project/crud-task.html'
+            templateUrl : 'html/partial/projects/crud-task.html'
         });
 });
 
