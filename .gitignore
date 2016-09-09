@@ -10,3 +10,4 @@ target/
 .idea/workspace.xml
 .idea/vcs.xml
 .mvn/
+NOTES.txt

@@ -27,14 +27,12 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="visibility" class="col-lg-2 control-label">Visibility</label>
+                <label for="lead" class="col-lg-2 control-label">Project Lead</label>
                 <div class="col-lg-10">
-                    <select class="form-control" ng-model="formData.private" ng-options="x for x in [true,false]" id="visibility">
-                    </select>
+                    <input class="form-control" type="text" name="lead" id="lead" />
                 </div>
             </div>
-
-            <div class="form-group" ng-init="formData.ownerUserID = 1">
+            <div class="form-group" ng-init="formData.ownerUserID = 1; formData.private = true">
                 <div class="col-lg-10 col-lg-offset-2" ng-show="action == 'create'">
                     <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid" ng-click="createElement('projects')">Create</button>
                 </div>
