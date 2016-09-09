@@ -8,16 +8,13 @@
         <li> </li>
     </ul>
 
-    <div class="panel panel-primary" ng-show="message">
-        <div class="panel-heading">
-            <h3 class="panel-title"></h3>
-        </div>
-        <div class="panel-body">
-            Task {{message}}
-        </div>
+    <div class="alert alert-dismissible alert-success" ng-show="message">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Well done!</strong> You successfully {{message}} the task.
+        <a href="#/projects-view-project" ng-click="findElement('projects', element.id)">View project home.</a>
     </div>
 
-    <form name="form" method="post" novalidate>
+    <form name="form" method="post" novalidate ng-show="!message">
         <fieldset>
             <legend>Task</legend>
             <div class="form-group">
@@ -27,6 +24,7 @@
                     <div ng-show="form.$submitted || form.summary.$touched">
                         <span ng-show="form.summary.$error.required">Please enter your summary.</span>
                     </div>
+
                 </div>
             </div>
             <div class="form-group">

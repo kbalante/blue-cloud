@@ -90,7 +90,7 @@ blueCloud.controller('mainController', function($scope, $http, $location) {
     $scope.createElement = function(type) {
         var data = $scope.formData;
         $http.post('http://localhost:8080/'+ type, data).success(function(data, status, headers) {
-            $scope.elements.push(data);
+
         });
         $scope.message = "created";
     };
@@ -98,15 +98,14 @@ blueCloud.controller('mainController', function($scope, $http, $location) {
     $scope.updateElement = function(type, id) {
         var data = $scope.formData;
         $http.put('http://localhost:8080/' + type + '/' + id, data).success(function(data, status, headers) {
-            //$scope.elements.objects[index] = data;
+
         });
         $scope.message = "updated";
     };
 
     $scope.deleteElement = function(type, id) {
         $http.delete('http://localhost:8080/'+ type + '/' + id).success(function(data) {
-            var index = $scope.elements.indexOf(data);
-            $scope.elements.splice(index, 1);
+
         });
         $scope.message = "deleted";
         $scope.formData = {};
