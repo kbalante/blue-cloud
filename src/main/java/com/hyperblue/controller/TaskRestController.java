@@ -23,6 +23,7 @@ public class TaskRestController {
      * @param id the id of the task
      * @return the task found
      */
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(method= RequestMethod.GET, value="{id}")
     public Task get(@PathVariable long id) {
         return repo.findOne(id);
@@ -33,6 +34,7 @@ public class TaskRestController {
      * @param task the task details
      * @return the new task created
      */
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(method=RequestMethod.POST)
     public Task create(@RequestBody Task task) {
         return repo.save(task);
@@ -42,6 +44,7 @@ public class TaskRestController {
      * Delete the task
      * @param id the id of the task to delete
      */
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(method=RequestMethod.DELETE, value="{id}")
     public void delete(@PathVariable long id) {
         repo.delete(id);
@@ -53,6 +56,7 @@ public class TaskRestController {
      * @param task the task details
      * @return the task updated
      */
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(method=RequestMethod.PUT, value="{id}")
     public Task update(@PathVariable long id, @RequestBody Task task) {
         Task update = repo.findOne(id);

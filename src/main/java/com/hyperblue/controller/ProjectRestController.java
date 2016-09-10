@@ -25,6 +25,7 @@ public class ProjectRestController {
      * @param id the id of the  project
      * @return the project found
      */
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(method= RequestMethod.GET, value="{id}")
     public Project get(@PathVariable long id) {
         return repo.findOne(id);
@@ -34,6 +35,7 @@ public class ProjectRestController {
      * Get all the projects
      * @return the projects found
      */
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(method= RequestMethod.GET)
     public Collection<Project> get() {
         return repo.findAll();
@@ -44,6 +46,7 @@ public class ProjectRestController {
      * @param project the project details
      * @return the new project created
      */
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(method=RequestMethod.POST)
     public Project create(@RequestBody Project project) {
         return repo.save(project);
@@ -53,6 +56,7 @@ public class ProjectRestController {
      * Delete the project
      * @param id the id of the project to delete
      */
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(method=RequestMethod.DELETE, value="{id}")
     public void delete(@PathVariable long id) {
         repo.delete(id);
@@ -64,6 +68,7 @@ public class ProjectRestController {
      * @param project the project details
      * @return the project updated
      */
+    @CrossOrigin(origins = "http://localhost:3000")
     @RequestMapping(method=RequestMethod.PUT, value="{id}")
     public Project update(@PathVariable long id, @RequestBody Project project) {
         Project update = repo.findOne(id);
