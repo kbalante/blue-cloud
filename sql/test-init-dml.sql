@@ -29,6 +29,12 @@ insert into task (project_id, summary) values (5,'summary test 2');
 insert into task (project_id, summary) values (5,'summary test 3');
 insert into task (project_id, summary) values (5,'summary test 4');
 
+insert into channel (name, channel_key, is_private, owner_user_id) values ('Foosball tournament 2016','foosb',false, 1);
+insert into channel (name, channel_key, is_private, owner_user_id) values ('IT Department News','shaw',false, 1);
+insert into channel (name, channel_key, is_private, owner_user_id) values ('Keiths Channel','enca',false, 1);
+
+select * from channel
+
 
 delete from project where id = 2
 

@@ -7,22 +7,22 @@ import javax.persistence.*;
 import java.util.Collection;
 
 /**
- * Project entity
+ * Channel entity
  */
 @Entity
 @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
-public class Project {
+public class Channel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "project_key")
-    private String projectKey;
+    @Column(name = "channel_key")
+    private String channelKey;
 
     @Column(name = "is_private", nullable = false)
     private Boolean isPrivate ;
@@ -30,13 +30,10 @@ public class Project {
     @Column(name = "owner_user_id", nullable = false)
     private Long owner ;
 
-    @Column(name = "lead_user_id")
-    private Long lead;
+    @OneToMany(mappedBy="channel", targetEntity=Message.class)
+    private Collection messages;
 
-    @OneToMany(mappedBy="project", targetEntity=Task.class)
-    private Collection tasks;
-
-    public Project() {
+    public Channel() {
     }
 
     public Long getId() {
@@ -55,12 +52,12 @@ public class Project {
         this.name = name;
     }
 
-    public String getProjectKey() {
-        return projectKey;
+    public String getChannelKey() {
+        return channelKey;
     }
 
-    public void setProjectKey(String projectKey) {
-        this.projectKey = projectKey;
+    public void setChannelKey(String channelKey) {
+        this.channelKey = channelKey;
     }
 
     public Boolean getPrivate() {
@@ -79,31 +76,23 @@ public class Project {
         this.owner = owner;
     }
 
-    public Long getLead() {
-        return lead;
+    public Collection getMessages() {
+        return messages;
     }
 
-    public void setLead(Long lead) {
-        this.lead = lead;
-    }
-
-    public Collection getTasks() {
-        return tasks;
-    }
-
-    public void setTasks(Collection tasks) {
-        this.tasks = tasks;
+    public void setMessages(Collection messages) {
+        this.messages = messages;
     }
 
     @Override
     public String toString() {
-        return "Project{" +
+        return "Channel{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", projectKey='" + projectKey + '\'' +
+                ", channelKey='" + channelKey + '\'' +
                 ", isPrivate=" + isPrivate +
                 ", owner=" + owner +
-                ", lead=" + lead +
+                ", messages=" + messages +
                 '}';
     }
 }

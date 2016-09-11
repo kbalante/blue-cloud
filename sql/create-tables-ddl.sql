@@ -47,7 +47,7 @@ CREATE TABLE bluecloud.task (
   project_id BIGINT NOT NULL,
   summary VARCHAR(1000) NOT NULL,
   description TEXT,
-  owner_user_id BIGINT,
+  owner_user_id BIGINT NOT NULL,
   priority VARCHAR(100),
   status VARCHAR(100),
   created_at DATE,
@@ -59,6 +59,29 @@ CREATE TABLE bluecloud.comment (
   id BIGINT NOT NULL AUTO_INCREMENT,
   project_id BIGINT NOT NULL,
   description TEXT NOT NULL,
+  created_at DATE,
+  updated_at DATE,
+  PRIMARY KEY (id)
+);
+
+drop table bluecloud.channel;
+CREATE TABLE bluecloud.channel (
+  id BIGINT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  channel_key VARCHAR(10) NULL,
+  is_private boolean NOT NULL,
+  owner_user_id BIGINT NOT NULL,
+  created_at DATE,
+  updated_at DATE,
+  PRIMARY KEY (id)
+);
+
+drop table bluecloud.message;
+CREATE TABLE bluecloud.message (
+  id BIGINT NOT NULL AUTO_INCREMENT,
+  channel_id BIGINT NOT NULL,
+  message VARCHAR(1000) NOT NULL,
+  owner_user_id BIGINT NOT NULL,
   created_at DATE,
   updated_at DATE,
   PRIMARY KEY (id)

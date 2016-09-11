@@ -18,7 +18,7 @@ public class Task {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name="project_id", referencedColumnName="id")
+    @JoinColumn(name="project_id", referencedColumnName="id", nullable = false)
     private Project project;
 
     @Column(name = "summary", nullable = false)
@@ -34,7 +34,7 @@ public class Task {
     private String priority ;
 
     @Column(name = "owner_user_id", nullable = false)
-    private Long ownerUserID ;
+    private Long owner;
 
     public Task() {
     }
@@ -87,12 +87,12 @@ public class Task {
         this.priority = priority;
     }
 
-    public Long getOwnerUserID() {
-        return ownerUserID;
+    public Long getOwner() {
+        return owner;
     }
 
-    public void setOwnerUserID(Long ownerUserID) {
-        this.ownerUserID = ownerUserID;
+    public void setOwner(Long owner) {
+        this.owner = owner;
     }
 
     @Override
@@ -103,7 +103,7 @@ public class Task {
                 ", description='" + description + '\'' +
                 ", status='" + status + '\'' +
                 ", priority='" + priority + '\'' +
-                ", ownerUserID=" + ownerUserID +
+                ", owner=" + owner +
                 '}';
     }
 }
