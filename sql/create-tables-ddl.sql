@@ -40,6 +40,7 @@ CREATE TABLE bluecloud.project (
 );
 
 alter table bluecloud.project change project_key VARCHAR(5) NULL;
+alter table bluecloud.project add description text;
 
 drop table bluecloud.task;
 CREATE TABLE bluecloud.task (
@@ -86,3 +87,14 @@ CREATE TABLE bluecloud.message (
   updated_at DATE,
   PRIMARY KEY (id)
 );
+
+drop table bluecloud.person;
+CREATE TABLE bluecloud.person (
+  id BIGINT NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(100) NOT NULL,
+  last_name VARCHAR(100) NOT NULL,
+  created_at DATE,
+  updated_at DATE,
+  PRIMARY KEY (id)
+);
+
