@@ -73,6 +73,7 @@ public class ProjectRestController {
     public Project update(@PathVariable long id, @RequestBody Project project) {
         Project update = repo.findOne(id);
         update.setName(project.getName());
+        update.setDescription(project.getDescription());
         update.setPrivate(project.getPrivate());
         return repo.save(update);
     }
